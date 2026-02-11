@@ -20,15 +20,13 @@ public class Main {
         WarehouseService service = new WarehouseService(items, locations, transactions);
         
         try {
-            // Inbound stock
+           
             WarehouseTransaction t1 = service.inbound("I001", "L001", 10);
             System.out.println("Inbound Success. Transaction ID: " + t1.getTransactionId());
-            
-            // Outbound stock  
+           
             WarehouseTransaction t2 = service.outbound("I002", "L002", 5);
             System.out.println("Outbound Success. Transaction ID: " + t2.getTransactionId());
             
-            // Summaries
             System.out.println("--- Stock Summary ---");
             service.printStockSummary();
             System.out.println("--- Location Summary ---");
@@ -47,3 +45,4 @@ public class Main {
         }
     }
 }
+
